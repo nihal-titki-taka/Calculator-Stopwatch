@@ -1,0 +1,142 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  background-color: hsl(0, 0%, 95%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* ── SIDE BY SIDE LAYOUT ── */
+#app {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+
+/* ══════════════════
+   CALCULATOR  (original style)
+══════════════════ */
+#calculator {
+  background-color: hsl(0, 0%, 15%);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 420px;
+}
+
+#display {
+  width: 100%;
+  padding: 20px;
+  font-size: 4rem;
+  text-align: right;
+  border: none;
+  outline: none;
+  background-color: hsl(0, 0%, 20%);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+#keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 20px;
+}
+
+#keys button {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  background-color: hsl(0, 0%, 30%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+#keys button:hover  { background-color: hsl(0, 0%, 40%); }
+#keys button:active { background-color: hsl(0, 0%, 50%); }
+
+#keys .operator-btn              { background-color: hsl(35, 100%, 55%); }
+#keys .operator-btn:hover        { background-color: hsl(35, 100%, 65%); }
+#keys .operator-btn:active       { background-color: hsl(35, 100%, 75%); }
+
+/* ══════════════════
+   STOPWATCH  (original style)
+══════════════════ */
+#stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sw-title {
+  font-size: 3rem;
+  font-family: Arial, sans-serif;
+  color: hsl(0, 0%, 25%);
+  margin-bottom: 20px;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  border: 5px solid hsl(0, 0%, 70%);
+  border-radius: 50px;
+  background-color: white;
+  min-width: 320px;
+}
+
+#sw-display {
+  font-size: 3.5rem;
+  font-family: monospace;
+  font-weight: bold;
+  color: hsl(0, 0%, 30%);
+  text-shadow: 2px 2px 2px hsla(0, 0%, 0%, 0.75);
+  margin-bottom: 25px;
+}
+
+#controls {
+  display: flex;
+  gap: 10px;
+}
+
+#controls button {
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  min-width: 110px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.2s;
+}
+
+#startBtn            { background-color: hsl(115, 100%, 40%); }
+#startBtn:hover      { background-color: hsl(115, 100%, 30%); }
+
+#stopBtn             { background-color: hsl(10, 90%, 50%); }
+#stopBtn:hover       { background-color: hsl(10, 90%, 40%); }
+
+#resetBtn            { background-color: hsl(205, 90%, 60%); }
+#resetBtn:hover      { background-color: hsl(205, 90%, 50%); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  #app { flex-direction: column; gap: 40px; }
+  #divider { width: 80%; height: 2px; margin: 0; }
+  #calculator { width: 340px; }
+  #display { font-size: 3rem; }
+  #keys button { font-size: 1.5rem; }
+  #sw-display { font-size: 2.5rem; }
+}
